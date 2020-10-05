@@ -1,44 +1,23 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const ILikeFood = [
-  { id: 1, name: "kimchi", heart: "❤❤", rate: 7 },
-  { id: 2, name: "kimbab", heart: "❤", rate: 8 },
-  { id: 3, name: "gomtang", heart: "❤❤❤❤", rate: 4 },
-];
+class App extends React.Component {
+  state = {
+    isLoading: true,
+  };
 
-function Food({ name, heart, rate }) {
-  return (
-    <div>
-      <h2>FOOD IS {name}</h2>
-      <h3>{heart}</h3>
-      <h3>{rate}/5.0</h3>
-    </div>
-  );
-}
+  componentDidMount() {
+    console.log("componentDidMount !");
+    setTimeout(() => {
+      this.setState({ isLoading: false });
+    }, 6000);
+  }
 
-Food.propTypes = {
-  name: PropTypes.string.isRequired,
-  heart: PropTypes.string.isRequired,
-  rate: PropTypes.number.isRequired,
-};
-
-function App() {
-  return (
-    <div>
-      {ILikeFood.map((dish) => (
-        <Food
-          name={dish.name}
-          heart={dish.heart}
-          key={dish.id}
-          rate={dish.rate}
-        />
-      ))}
-      {/* {ILikeFood.map(function (dish) {
-        return <Food name={dish.name} heart={dish.heart} />;
-      })} */}
-    </div>
-  );
-}
+  render() {
+    /*this.isLoading을 계속 할 필요없이 미리 선언해서 사용한다 */
+    const { isLoading } = this.state;
+    return <div>{isLoading ? "Loading..." : "Ready"}</div>;
+  } /*render end */
+} /*App end */
 
 export default App;
