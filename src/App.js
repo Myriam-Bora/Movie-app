@@ -10,16 +10,16 @@ function Food({ name, heart }) {
 }
 
 const ILikeFood = [
-  { name: "kimchi", heart: "❤❤" },
-  { name: "kimbab", heart: "❤" },
-  { name: "gomtang", heart: "❤❤❤❤" },
+  { id: 1, name: "kimchi", heart: "❤❤" },
+  { id: 2, name: "kimbab", heart: "❤" },
+  { id: 3, name: "gomtang", heart: "❤❤❤❤" },
 ];
 
 function App() {
   return (
     <div>
       {ILikeFood.map((dish) => (
-        <Food name={dish.name} heart={dish.heart} />
+        <Food name={dish.name} heart={dish.heart} key={dish.id} />
       ))}
       {/* {ILikeFood.map(function (dish) {
         return <Food name={dish.name} heart={dish.heart} />;
