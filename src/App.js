@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import axios from "axios";
+import Movie from "./Movie";
 
 class App extends React.Component {
   state = {
@@ -9,18 +10,47 @@ class App extends React.Component {
   };
 
   getMovies = async () => {
-    const movies = await axios.get("https://yts-proxy.now.sh/list_movies.json");
-    //await : axios는 속도가 느리기 때문에 완료가 될 때까지 기다려주는 keyword
-    //단, await을 사용하기 위해 async 펑션이 필요
+    //{data:{data:{movies}}}
+    const {
+      data: {
+        data: { movies },
+      },
+    } = await axios.get(
+      "https://yts-proxy.now.sh/list_movies.json?sort_by=rating"
+    );
+
+    this.setState({ movies, isLoading: false });
+    //movies.data.data.movies : 너무 길어서 위처럼 작성 (es6)
+    //const movies = await axios.get("https://yts-proxy.now.sh/list_movies.json");
+    // this.setState(movies.data.data.movies, { isLoading: false });
   };
 
   componentDidMount() {
-    this.getMovies(); //getMovies 메소드 호출
+    this.getMovies();
   }
 
   render() {
-    const { isLoading } = this.state;
-    return <div>{isLoading ? "Loading..." : "Ready"}</div>;
+    const { isLoading, movies } = this.state;
+
+    return (
+      <div>
+        {isLoading
+          ? "Loading..."
+          : movies.map((movie) => {
+              return (
+                <Movie
+                  key={movie.id}
+                  id={movie.id}
+                  year={movie.year}
+                  title={movie.title}
+                  summary={movie.summary}
+                  poster={movie.medium_cover_image}
+                /> //map을 호출할 때 마다 movie 담는다
+              );
+            })}
+        ;
+      </div>
+    );
   } /*render end */
 } /*App end */
 
