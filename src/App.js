@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import axios from "axios";
 import Movie from "./Movie";
-import "./App.css";
+import "./style.css";
 
 class App extends React.Component {
   state = {
@@ -42,6 +42,7 @@ class App extends React.Component {
         ) : (
           <div className="movies">
             {movies.map((movie) => {
+              console.log(movie);
               return (
                 <Movie
                   key={movie.id}

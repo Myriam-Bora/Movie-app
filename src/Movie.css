@@ -1,3 +1,19 @@
-body {
-  background-color: antiquewhite;
+.movie {
+  width: 230px;
+  height: 600px;
+  margin: 0px 15px;
+}
+
+.movie__genres {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: left;
+  font-size: 13px;
+  opacity: 0.6;
+  flex-flow: wrap;
+}
+
+.movie__genre {
+  margin-right: 5px;
 }

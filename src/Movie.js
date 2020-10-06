@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./Movie.css";
+import "./style.css";
 
 //props의 특정값을 가져올 때는 반듯 {} 로 감싸준다 !
 function Movie({ id, year, title, summary, poster, genres }) {
@@ -13,9 +13,9 @@ function Movie({ id, year, title, summary, poster, genres }) {
         title={title}
       ></img>
       <div className="movie__data>">
-        <h3 className="movie__title">{title}</h3>
-        <h3 className="movie__year">{year}</h3>
-        <p className="movie__summary">{summary}</p>
+        <h4 className="movie__title">{title}</h4>
+        <span className="movie__year">{year}</span>
+        {/* <p className="movie__summary">{summary}</p> */}
         <ul className="movie__genres">
           {genres.map((genre, index) => (
             <li key={index} className="movie__genre">
