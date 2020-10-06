@@ -15,7 +15,6 @@ function Movie({ id, year, title, summary, poster, genres }) {
       <div className="movie__data>">
         <h4 className="movie__title">{title}</h4>
         <span className="movie__year">{year}</span>
-        {/* <p className="movie__summary">{summary}</p> */}
         <ul className="movie__genres">
           {genres.map((genre, index) => (
             <li key={index} className="movie__genre">
@@ -23,6 +22,8 @@ function Movie({ id, year, title, summary, poster, genres }) {
             </li> //index : map을 돌리면 자동으로 index가 만들어진다
           ))}
         </ul>
+        {/* slice : 일정 글자수에서 자르기 */}
+        {<p className="movie__summary">{summary.slice(0, 140)} ...</p>}
       </div>
     </div>
   );
