@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./style.css";
+import "../style.css";
 
 //props의 특정값을 가져올 때는 반듯 {} 로 감싸준다 !
 function Movie({ id, year, title, summary, poster, genres }) {
