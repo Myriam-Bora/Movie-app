@@ -41,6 +41,6 @@
 
 
 
-## Try GitHub Pages  🔍
+## Try GitHub Pages  🔍 (구현중..)
 https://myriam-bora.github.io/Movie-app/
 
