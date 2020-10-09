@@ -91,3 +91,12 @@ video {
 
   vertical-align: baseline;
 }
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.movies {
+  margin: 0px;
+}

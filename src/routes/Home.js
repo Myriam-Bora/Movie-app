@@ -41,20 +41,23 @@ class Home extends React.Component {
           </div> //className : HTML이 아닌 JSX에서 사용하는 class
         ) : (
           <div className="movies">
-            {movies.map((movie) => {
-              console.log(movie);
-              return (
-                <Movie
-                  key={movie.id}
-                  id={movie.id}
-                  year={movie.year}
-                  title={movie.title}
-                  summary={movie.summary}
-                  poster={movie.medium_cover_image}
-                  genres={movie.genres}
-                />
-              );
-            })}
+            <div className="movie-app__title">Movie Chart</div>
+            <div className="movie__list">
+              {movies.map((movie) => {
+                console.log(movie);
+                return (
+                  <Movie
+                    key={movie.id}
+                    id={movie.id}
+                    year={movie.year}
+                    title={movie.title}
+                    summary={movie.summary}
+                    poster={movie.medium_cover_image}
+                    genres={movie.genres}
+                  />
+                );
+              })}
+            </div>
           </div>
         )}
       </div>

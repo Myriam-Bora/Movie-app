@@ -1,9 +1,18 @@
 body {
   background-color: #edf0f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .movies {
   margin: 50px 200px;
   display: flex;
   justify-content: center;
   flex-flow: wrap;
+}
+
+.loding__text {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
 }
