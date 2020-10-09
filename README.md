@@ -1,4 +1,4 @@
-# Movie-app
+# Movie-app 🎬
     영화 웹 서비스
     
 ## 주요기능
@@ -34,11 +34,11 @@
     ✅ YTS API
 
 ## Preview 
-<!--
-	 ▪ 👨‍👩‍👧‍👦 Friends
+
+  	🏡 Home 
  
-![Friends](screen-shot/friends.PNG)
--->
+![home](src/screen-shot/movie-app1.PNG)
+
 
 
 ## Try GitHub Pages
