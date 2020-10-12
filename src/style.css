@@ -1,4 +1,5 @@
 @import "./components/Movie.css";
 @import "./routes/Home.css";
+@import "./routes/Details.css";
 
 @import "./reset.css";

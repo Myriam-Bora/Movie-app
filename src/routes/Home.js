@@ -44,7 +44,7 @@ class Home extends React.Component {
             <div className="movie-app__title">Movie Chart</div>
             <div className="movie__list">
               {movies.map((movie) => {
-                console.log(movie);
+                {/* console.log(movie); */}
                 return (
                   <Movie
                     key={movie.id}

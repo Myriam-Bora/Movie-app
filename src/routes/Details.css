@@ -1,0 +1,66 @@
+.details {
+  margin: 30px;
+}
+
+.header {
+  margin: 30px 0px;
+  font-size: 35px;
+  font-weight: 700;
+  border-bottom: 2px solid black;
+  padding-bottom: 10px;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  margin: 50px 50px;
+  width: 95%;
+  flex-wrap: wrap;
+}
+
+.main-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+}
+
+.main-info__main {
+  display: flex;
+  width: 70%;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 50px;
+}
+.title {
+  font-size: 30px;
+  font-weight: 600;
+  width: 60%;
+}
+
+.year {
+  opacity: 0.5;
+  margin: 10px 0;
+}
+
+.genres {
+  list-style: none;
+  display: flex;
+}
+
+.detail__genre {
+  margin: 0px 5px;
+  font-size: 15px;
+  opacity: 0.7;
+}
+
+.summary {
+  display: block;
+  margin: 20px 0px;
+  width: 70%;
+  font-size: 20px;
+  text-align: justify;
+}
