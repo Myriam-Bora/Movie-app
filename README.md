@@ -23,15 +23,9 @@
 
 ## 사용기술
 
-    ✅ JSX
+    ✅ Axios
     
-    ✅ State
-    
-    ✅ Props
-    
-    ✅ Class components
-    
-    ✅ YTS API
+    ✅ Router
 
 ## Preview 
 
