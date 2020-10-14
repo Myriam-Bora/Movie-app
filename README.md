@@ -35,6 +35,6 @@
 
 
 
-## Try GitHub Pages  🔍
+## Try GitHub Pages  👁‍🗨
 https://myriam-bora.github.io/Movie-app/
 
