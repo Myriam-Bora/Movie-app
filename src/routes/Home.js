@@ -1,16 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Movie from "../components/Movie";
-import { connect } from "react-redux";
 import { moviesReducer } from "../store";
 import "../style.css";
+import axios from "axios";
 
-function Home({ movieList }) {
-  const [state, dispatch] = React.userReducer(moviesReducer, {
+function Home() {
+  const [state, dispatch] = React.useReducer(moviesReducer, {
     isLoading: true,
     movies: [],
   });
 
+  const getMovies = async () => {
+    const {
+      data: {
+        data: { movies },
+      },
+    } = await axios.get(
+      "https://yts-proxy.now.sh/list_movies.json?sort_by=rating"
+    );
+    dispatch({ type: "LOAD_MOVIES", movies });
+  };
+
+  useEffect(() => {
+    getMovies();
+  }, []);
+
   const { isLoading, movies } = state;
+  let makeArray = Array.from(movies);
 
   return (
     <div>
@@ -22,7 +38,7 @@ function Home({ movieList }) {
         <div className="movies">
           <div className="movie-app__title">Movie Chart</div>
           <div className="movie__list">
-            {movies.map((movie) => {
+            {makeArray.map((movie) => {
               return (
                 <Movie
                   key={movie.id}
@@ -42,8 +58,4 @@ function Home({ movieList }) {
   );
 } /*App end */
 
-function mapStateToProps(state) {
-  return { movieList: state };
-}
-
-export default connect(mapStateToProps)(Home);
+export default Home;
