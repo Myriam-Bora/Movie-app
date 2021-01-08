@@ -1,45 +1,71 @@
 import React from "react";
+import { connect } from "react-redux";
+import { Button, Modal } from "semantic-ui-react";
+import "semantic-ui-css/semantic.min.css";
 import PropTypes from "prop-types";
 import "../style.css";
-import { Link } from "react-router-dom";
+import { modalReducer } from "../store";
 
 //props의 특정값을 가져올 때는 반듯 {} 로 감싸준다 !
 function Movie({ id, year, title, summary, poster, genres }) {
+  const [detailState, detailDispatch] = React.useReducer(modalReducer, {
+    open: false,
+    dimmer: undefined,
+  });
+  const { open, dimmer } = detailState;
   return (
     //to안에 props도 함께 보내기
-
     <div className="movie">
-      <Link
-        to={{
-          pathname: "/details",
-          state: {
-            year,
-            title,
-            summary,
-            poster,
-            genres,
-          },
-        }}
+      <Modal
+        dimmer={dimmer}
+        open={open}
+        onClose={() => detailDispatch({ type: "CLOSE_MODAL" })}
+        content={(title, summary, genres)}
       >
-        <img
-          className="movie__poster"
-          src={poster}
-          alt={title}
-          title={title}
-        ></img>
-      </Link>
+        <Modal.Header>
+          {title}&nbsp;
+          <span>({year})</span>&nbsp;
+          <div>
+            {genres.map((genre, index) => (
+              <span
+                key={index}
+                className="movie__genre"
+                style={{ fontSize: "10px", opacity: "0.4" }}
+              >
+                {/* slice : 일정 글자수에서 자르기 */}
+                {genre.slice(0, 20)}&nbsp;&nbsp;
+              </span>
+            ))}
+          </div>
+        </Modal.Header>
+        <Modal.Content>{summary}</Modal.Content>
+        <Modal.Actions>
+          <Button
+            positive
+            onClick={() => detailDispatch({ type: "CLOSE_MODAL" })}
+          >
+            Done
+          </Button>
+        </Modal.Actions>
+      </Modal>
+      <img
+        className="movie__poster"
+        src={poster}
+        alt={title}
+        title={title}
+        onClick={() =>
+          detailDispatch({
+            type: "OPEN_MODAL",
+            title: title,
+            genres: genres,
+            summary: summary,
+          })
+        }
+      ></img>
+
       <div className="movie__data">
         <h4 className="movie__title">{title}</h4>
         <div className="movie__year">{year}</div>
-        <ul className="movie__genres">
-          {genres.map((genre, index) => (
-            <li key={index} className="movie__genre">
-              {genre.slice(0, 4)}
-            </li> //index : map을 돌리면 자동으로 index가 만들어진다
-          ))}
-        </ul>
-        {/* slice : 일정 글자수에서 자르기 */}
-        {<p className="movie__summary">{summary.slice(0, 100)} ...</p>}
       </div>
     </div>
   );
@@ -53,4 +79,9 @@ Movie.propTypes = {
   poster: PropTypes.string.isRequired,
   genres: PropTypes.arrayOf(PropTypes.string).isRequired, //arrayOf:배열
 };
-export default Movie;
+
+function mapStateToProps(state) {
+  return { detailMovie: state };
+}
+
+export default connect(mapStateToProps)(Movie);

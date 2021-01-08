@@ -1,6 +1,6 @@
 body {
   background-color: #edf0f7;
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
 }
@@ -15,4 +15,8 @@ body {
   text-align: center;
   font-size: 30px;
   font-weight: 600;
+}
+
+.movie-app__title {
+  padding-top: 20px;
 }
