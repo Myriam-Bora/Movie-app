@@ -1,13 +1,13 @@
 # Movie-app 🎬
-    영화 웹 서비스
-    
+
+    실시간 영화 차트
+
 ## 주요기능
 
-    ✅ YTS API를 이용한 영화 차트 웹 서비스
-    
-    ✅ 해당 영화를 클릭 시 상세 페이지로 이동
+    ✅ YTS API를 이용한 실시간 영화 차트
 
-    
+    ✅ 해당 영화를 클릭 시 상세내용이 담긴 Modal
+
 ## 사용언어 / 도구
 
 ![React](https://img.shields.io/badge/-React-222222?style=flat&logo=React&logoColor=61DAFB)
@@ -20,21 +20,24 @@
 
 ![VS Code](http://img.shields.io/badge/-VS%20Code-007ACC?style=flat-square&logo=visual-studio-code)
 
-
 ## 사용기술
 
-    ✅ Axios
-    
-    ✅ Router
+    ✅ Function Component
 
-## Preview 
+    ✅ ![React](https://img.shields.io/badge/-Semanic_ui_React-222222?style=flat&logo=React&logoColor=61DAFB)
 
-  	🏡 Home 
- 
+    ✅ ![Redux](https://img.shields.io/badge/-Redux-764ABC?style=flat&logo=Redux&logoColor=61DAFB)
+
+## Preview
+
+🏡 Home
+
 ![home](src/screen-shot/movie-app1.PNG)
 
+    👀 Movie Detail
 
+![MovieDetail](src/screen-shot/screenshot2.PNG)
 
-## Try GitHub Pages  👁‍🗨
+## Try GitHub Pages 👁‍🗨
+
 https://myriam-bora.github.io/Movie-app/
-
