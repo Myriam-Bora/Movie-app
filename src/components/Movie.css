@@ -8,7 +8,8 @@
 
 .movie__list {
   width: 100%;
-  margin-left: 120px;
+  margin-right: 150px;
+  margin-left: 300px;
 }
 
 .movie__genres {
@@ -75,7 +76,7 @@
 
 .movie {
   width: 230px;
-  height: 600px;
+  height: 450px;
   margin: 0px 15px;
   float: left;
   transition: opacity 0.5s ease-in-out;
@@ -107,4 +108,8 @@
 .movie__summary {
   margin-top: 10px;
   opacity: 0.8;
+}
+
+.movie__poster:hover {
+  cursor: pointer;
 }

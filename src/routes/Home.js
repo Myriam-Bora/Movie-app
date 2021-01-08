@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+
 import Movie from "../components/Movie";
 import { moviesReducer } from "../store";
 import "../style.css";
@@ -26,6 +27,7 @@ function Home() {
   }, []);
 
   const { isLoading, movies } = state;
+
   let makeArray = Array.from(movies);
 
   return (

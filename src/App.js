@@ -8,10 +8,10 @@ import Details from "./routes/Details";
 function App() {
   return (
     <HashRouter>
-      <Navigation />
+      {/* <Navigation /> */}
       <Route path="/" exact={true} component={Home}></Route>
-      <Route path="/about" exact={true} component={About}></Route>
-      <Route path="/details" exact={true} component={Details}></Route>
+      {/* <Route path="/about" exact={true} component={About}></Route>
+      <Route path="/details" exact={true} component={Details}></Route> */}
     </HashRouter>
   );
 }
