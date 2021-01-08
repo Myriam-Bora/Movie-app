@@ -22,11 +22,9 @@
 
 ## 사용기술
 
-    ✅ Function Component
+   ![React](https://img.shields.io/badge/-Semanic_ui_React-222222?style=flat&logo=React&logoColor=61DAFB)
 
-    ✅ ![React](https://img.shields.io/badge/-Semanic_ui_React-222222?style=flat&logo=React&logoColor=61DAFB)
-
-    ✅ ![Redux](https://img.shields.io/badge/-Redux-764ABC?style=flat&logo=Redux&logoColor=61DAFB)
+   ![Redux](https://img.shields.io/badge/-Redux-764ABC?style=flat&logo=Redux&logoColor=61DAFB)
 
 ## Preview
 
@@ -34,9 +32,9 @@
 
 ![home](src/screen-shot/movie-app1.PNG)
 
-    👀 Movie Detail
+👀 Movie Detail
 
-![MovieDetail](src/screen-shot/screenshot2.PNG)
+![movieDetail](src/screen-shot/screenshot2.png)
 
 ## Try GitHub Pages 👁‍🗨
 
