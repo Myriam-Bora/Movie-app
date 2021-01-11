@@ -71,6 +71,7 @@ function Movie({ id, year, title, summary, poster, genres }) {
   );
 }
 
+//propTypes : props의 타입을 검사. 타입에 맞지 않은 값이 전달되면 콘솔에 에러를 준다
 Movie.propTypes = {
   id: PropTypes.number.isRequired,
   year: PropTypes.number.isRequired,
@@ -80,8 +81,4 @@ Movie.propTypes = {
   genres: PropTypes.arrayOf(PropTypes.string).isRequired, //arrayOf:배열
 };
 
-function mapStateToProps(state) {
-  return { detailMovie: state };
-}
-
-export default connect(mapStateToProps)(Movie);
+export default Movie;
